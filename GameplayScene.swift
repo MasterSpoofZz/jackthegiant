@@ -22,7 +22,7 @@ class GameplayScene: SKScene {
         center = (self.scene?.size.width)! / (self.scene?.size.height)!;
         
         player = self.childNode(withName: "Player") as! Player?;
-        
+        player?.initalizePlayerAndAnimations();
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -36,8 +36,10 @@ class GameplayScene: SKScene {
             
             if location.x > center {
                 moveLeft = false;
+                player?.animatePlayer();
             } else {
                 moveLeft = true;
+                player?.animatePlayer();
             }
         }
         
@@ -47,6 +49,7 @@ class GameplayScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false;
+        player?.stopPlayerAnimation();
     }
     
     func managePlayer() {
