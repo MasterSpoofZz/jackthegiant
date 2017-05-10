@@ -23,7 +23,7 @@ class Player: SKSpriteNode {
             playerAnimation.append(SKTexture(imageNamed: name));
         }
         
-        animatePlayerAction = SKAction.animate(withNormalTextures: playerAnimation, timePerFrame: 0.08, resize: true, restore: false);
+        animatePlayerAction = SKAction.animate(with: playerAnimation, timePerFrame: 0.08, resize: true, restore: false);
         
     }
     
